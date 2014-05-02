@@ -1,0 +1,14 @@
+<extend name="Base" />
+<block name="title"><title>{$title}</title></block>
+<block name="menu">
+		<h1>病人信息管理简易系统--{$name}</h1>
+</block>
+<block name="content">
+<?php 
+	foreach ($patients as $patient) {
+		$url = U('/Home/Patient/edit/' . $patient['id']);
+		echo "<a href=" . $url . ">" . $patient['name'] . "</a><br />";
+	}
+?>
+<p><a href={:U('Patient/create')}>新建一个病人</a></p>
+</block>

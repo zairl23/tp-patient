@@ -1,0 +1,9 @@
+<p>病人主诉:</p>
+<textarea name="complained"  value={$record['complained'] ? $record['complained'] : ""}></textarea>
+<p>医生诊断:</p>
+<textarea name="diagnosis"  value={$record['diagnosis'] ? $record['diagnosis'] : ""}></textarea>
+<p>医疗结果：</p>
+<input name="result" type="text" value={$record['result'] ? $record['result'] : ''} >
+<p>出院时间：</p>
+<input name="ended_at" type="date" value={$record['ended_at'] ? $record['ended_at'] : ''} >
+<input name="patient_id" type="hidden" value={$record['patient_id'] ? $record['patient_id'] : ''} >

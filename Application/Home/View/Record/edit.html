@@ -1,0 +1,18 @@
+<extend name="Base" />
+<block name="title"><title>{$title}</title></block>
+<block name="menu">
+	<h1>病人信息管理简易系统--{$name}</h1>
+</block>
+<block name="content">
+	<div class='form'>
+		<form method="post" action={:U('/Home/Record/update/' . $record['id'])}>
+			<include file="Form" />
+			<p>
+				<input type='submit' value='保存' />
+				<a href={:U('/Home/Patient/edit/' . $record['patient_id'])}>病人总信息</a>
+				<a href={:U('/Home/Record/delete/' . $record['id'])}>删除病历资料</a>
+                <a href={:U('/Home/Record/create/' . $record['id'])}>新建病历</a>
+			</p>
+		</form>
+	</div>
+</block>

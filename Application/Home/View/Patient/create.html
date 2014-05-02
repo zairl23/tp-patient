@@ -1,0 +1,13 @@
+<extend name="Base" />
+<block name="title"><title>{$title}</title></block>
+<block name="menu">
+		<h1>病人信息管理简易系统--{$name}</h1>
+</block>
+<block name="content">
+	<div class='form'>
+		<form method="post" action={:U('Patient/store')} >
+			<include file="Form" />
+			<p><input type='submit' value='保存' /></p>
+		</form>
+	</div>
+</block>

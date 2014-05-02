@@ -1,0 +1,15 @@
+<p>姓名:</p>
+<input name="name" type="text" value={$patient['name'] ? $patient['name'] : ""}>
+<p>性别:</p>
+<label><input name="sex" type="radio" value={$patient['sex'] == '男' ? 'checked' : ''} >男 </label> 
+<label><input name="sex" type="radio" value={$patient['sex'] == '女' ? 'checked' : ''} >女 </label> 
+<p>年龄:</p>
+<input name="age" type="text" value={$patient['age'] ? $patient['age'] : ''} >
+<p>出生地:</p>
+<input name="birth_place" type="text" value={$patient['birth_place'] ? $patient['birth_place'] : ''} >
+<p>婚烟状态:</p>
+<input name="martial_status" type="text" value={$patient['martial_status'] ? $patient['martial_status'] : ''} >
+<p>职业:</p>
+<input name="profession" type="text" value={$patient['profession'] ? $patient['profession'] : ''} >
+<p>电话号码:</p>
+<input name="phonenumber" type="text" value={$patient['phonenumber'] ? $patient['phonenumber'] : ''} >

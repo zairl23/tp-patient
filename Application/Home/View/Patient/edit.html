@@ -1,0 +1,45 @@
+<extend name="Base" />
+<block name="title"><title>{$title}</title></block>
+<block name="menu">
+	<h1>病人信息管理简易系统--{$name}</h1>
+</block>
+<block name="content">
+	<div class='form'>
+		<form method="post" action={:U('/Home/Patient/update/' . $patient['id'])}>
+			<include file="Form" />
+			<p>
+				<input type='submit' value='保存' />
+				<a href={:U('/Home/Patient/index')}>病人列表</a>
+				<a href={:U('/Home/Patient/delete/' . $patient['id'])}>删除病人资料</a>
+			</p>
+		</form>
+	</div>
+	<div class="list">
+	<ul>
+		<h3>病历列表</h3>
+		<table>
+            <tr>
+			    <th>ID</th>
+			    <th>病人主诉</th>
+                <th>医生诊断</th>
+                <th>治疗结果</th>
+                <th>治疗时间</th>
+                <th>编辑病历</th>
+            </tr>		    
+            <?php foreach ($patient['Record'] as $record) {
+                    $url = U('/Home/Record/edit/' . $record['id']);
+			    	$th  = "<tr><th>" . $record['id'] . "</th>";
+                    $th .= "<th>" . $record['complained'] . "</th>";
+                    $th .= "<th>" . $record['diagnosis'] . "</th>";
+                    $th .= "<th>" . $record['result'] . "</th>";
+                    $th .=  "<th>" . $record['created_at'] . "~" . $record['ended_at'] . "</th>";
+                    $th .=  "<th><a href=" . $url . ">编辑</a></th>";
+                    echo $th;
+			    }
+		    ?> 
+        </table>	
+    </ul>
+	</div>
+
+	<a href={:U('/Home/Record/create/' . $patient['id'])}>新建病历</a>
+</block>
