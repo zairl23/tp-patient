@@ -46,10 +46,8 @@ class PatientController extends Controller {
     	$Patient = D('Patient');
         $Patient->create();
         if($Patient->add()) {
-            //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
             $this->success('新增成功', U('Patient/index'));
         } else {
-            //错误页面的默认跳转页面是返回前一页，通常不需要设置
             $this->error('新增失败');
         }
     }
@@ -65,8 +63,6 @@ class PatientController extends Controller {
     	$this->assign('name', '编辑病人资料');
         $this->assign('title', 'edit a patient');
         $this->assign('patient', D('Patient')->relation(true)->find($id));
-        //var_dump(D('Patient')->relation(true)->find($id));
-        //$this->assign('records', D('Record')->where('patient_id'));
         $this->display();
     }
 
